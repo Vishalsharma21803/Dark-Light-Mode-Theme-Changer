@@ -1,0 +1,58 @@
+/* Enhanced Dark/Light Mode Styles */
+.dark-mode {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #f5f7fa;
+    transition: background 0.5s, color 0.5s;
+}
+
+.light-mode {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #222;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Stylish Mode Changer Button */
+#mode {
+    padding: 0.7rem 2rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #069163 40%, #47e7b6 100%);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(6,145,99,0.12), 0 1.5px 6px rgba(0,0,0,0.08);
+    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin-top: 2rem;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+#mode::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+    z-index: 0;
+}
+
+#mode:active::after {
+    width: 200%;
+    height: 500%;
+}
+
+#mode:hover, #mode:focus {
+    background: linear-gradient(90deg, #04704b 40%, #1de9b6 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.06);
+    box-shadow: 0 6px 24px rgba(6,145,99,0.18), 0 2px 8px rgba(0,0,0,0.10);
+    outline: none;
+}
